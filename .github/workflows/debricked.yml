@@ -1,0 +1,24 @@
+name: Debricked
+
+on: [push]    
+
+jobs:
+  debricked:
+    runs-on: ubuntu-latest
+
+    container:
+      image: debricked/cli:latest-resolution-debian
+
+    steps:
+     - name: Checkout repository
+       uses: actions/checkout@v3
+
+     - name: Run Finger Print
+       run: |          
+          debricked fingerprint
+          
+     - name: Scan 
+       run: |          
+          debricked scan     
+       env:
+          DEBRICKED_URI: 'https://staging.debricked.com/'
