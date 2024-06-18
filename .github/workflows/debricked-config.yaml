@@ -1,0 +1,5 @@
+               overrides:  
+             - pURL: "pkg:maven/org.neo4j.procedure/apoc.jar"
+              version: "4.3.0.4"
+              fileRegexes:
+                 - "maven/neo4j/plugins/apoc.jar"
